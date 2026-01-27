@@ -7,8 +7,8 @@ import TheSystem from "../component/TheSystem";
 const page = () => {
   return (
     <div>
-      {/* <Hero /> */}
-      {/* <TheShift /> */}
+      <Hero />
+      <TheShift />
       {/* <SparkSignals /> */}
       {/* <BrandEvolution /> */}
       {/* <TheSystem /> */}
