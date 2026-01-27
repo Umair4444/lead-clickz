@@ -29,8 +29,8 @@ export default function BrandEvolution() {
       </div>
 
       {/* Content container */}
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-4 md:gap-10 md:grid-cols-2">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ">
+        <div className="grid gap-4 md:gap-40 md:grid-cols-2">
           {/* Left column */}
           <div className="space-y-6">
             {/* Label */}
@@ -42,49 +42,36 @@ export default function BrandEvolution() {
             </div>
 
             {/* Headline */}
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight capitalize text-foreground max-w-xl">
-              Yesterday Was About Direction.
-            </h2>
-
-            {/* Pill headline */}
-            <div className="flex">
-              <h3
-                className="
-                  text-lg sm:text-2xl lg:text-3xl
-                  font-semibold capitalize
-                  border border-black rounded-full
-                  px-6 sm:px-8 py-2 sm:py-3
-                  text-center
-                "
-              >
-                Today Is About Power.
-              </h3>
+            <div className="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight capitalize text-foreground ">
+              <h2 className="">
+                Yesterday Was About Direction.{" "}
+                <span className="text-blue-500">Today Is About Power.</span>
+              </h2>
             </div>
 
             {/* Description */}
             <p className="text-base sm:text-lg lg:text-xl leading-relaxed max-w-2xl">
               There was a time when marketing was about aim—pointing in the
-              right direction and hoping attention followed. That evolution is
-              reflected in our identity. What was once an arrow is now a
-              lightning bolt—not because we move faster, but because we strike
-              where it matters most.
+              right direction and hoping attention followed. That was yesterday.
+            </p>
+            <p className="text-base sm:text-lg lg:text-xl leading-relaxed max-w-2xl">
+              Today, success demands precision, timing, and force. That
+              evolution is reflected in our identity. What was once an arrow is
+              now a lightning bolt—not because we move faster, but because we
+              strike where it matters most.
             </p>
           </div>
 
           {/* Right column */}
-          <div className="space-y-8 md:self-end max-w-xl">
-            <p className="block justify-baseline text-lg sm:text-xl lg:text-2xl leading-relaxed">
-              <span>That was yesterday.</span>
+          <div className="space-y-8 md:self-end justify-end text-left max-w-xl">
+            <p className="justify-baseline text-lg sm:text-xl lg:text-2xl leading-snug">
+              <span>A spark doesn’t shout. It activates.</span>
               <br />
-              <span>Today, success demands precision, timing, and force.</span>
+              <span>
+                A single strike applied at the right moment—can change
+                everything.
+              </span>
             </p>
-
-            {/* CTA */}
-            <div className="border border-blue-500 rounded-full w-fit px-6 sm:px-8 py-3 sm:py-4">
-              <p className="text-lg md:text-base lg:text-2xl font-semibold italic capitalize text-blue-500 text-center">
-                A spark doesn't shout. It activates.
-              </p>
-            </div>
           </div>
         </div>
       </div>
@@ -94,7 +81,7 @@ export default function BrandEvolution() {
         src={SmallSphere}
         alt="Small Decorative Sphere"
         className="
-          absolute right-0
+          absolute right-0 opacity-20
           -top-16 sm:-top-24
           w-32 sm:w-44 lg:w-56
         "
