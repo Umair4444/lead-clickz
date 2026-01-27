@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import CTAButton from "@/components/ui/CTAButton";
-import thunder from "@/assets/thumder.png";
 import logo from "@/assets/logo.gif";
 import ArrowRightUp from "@/components/icons/ArrowRightUp";
 
@@ -23,22 +22,21 @@ export default function Navigation() {
     <nav className="fixed top-0 z-50 w-full bg-white/80 backdrop-blur-xl">
       <div className="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between ">
         {/* Logo */}
- <div>
-  <Link href="/" className="group inline-block">
-    <Image
-      src={logo}
-      alt="Logo"
-      priority
-      className="
+        <div>
+          <Link href="/" className="group inline-block">
+            <Image
+              src={logo}
+              alt="Logo"
+              priority
+              className="
         h-10 w-fit object-contain
         transition-all duration-300 ease-out
         group-hover:scale-105
         group-hover:opacity-90
       "
-    />
-  </Link>
-</div>
-
+            />
+          </Link>
+        </div>
 
         {/* Desktop Menu */}
         <div className="hidden lg:flex items-center gap-6">
@@ -46,7 +44,11 @@ export default function Navigation() {
             const isActive = pathname === item.href;
 
             return (
-              <Link key={item.href} href={item.href} className="relative text-lg font-medium">
+              <Link
+                key={item.href}
+                href={item.href}
+                className="relative text-lg font-medium"
+              >
                 <span
                   className={`relative ${
                     isActive
@@ -56,7 +58,7 @@ export default function Navigation() {
                 >
                   {item.label}
                   {isActive && (
-                    <span className="absolute left-1/4 -bottom-1 h-[2px] w-1/2 -translate-x-1/2 bg-[#027BFF]" />
+                    <span className="absolute left-1/4 -bottom-1 h-[2px] w-1/2 -translate-x-1/2 bg-[#027BFF] translate-y-0.5" />
                   )}
                 </span>
               </Link>

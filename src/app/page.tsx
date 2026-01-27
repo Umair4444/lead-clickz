@@ -7,8 +7,8 @@ import BrandEvolution from "@/components/BrandEvolution";
 const HomePage = () => {
   return (
     <div>
-      {/* <Hero /> */}
-      {/* <TheShift /> */}
+      <Hero />
+      <TheShift />
       <SparkSignals />
       {/* <BrandEvolution /> */}
     </div>
