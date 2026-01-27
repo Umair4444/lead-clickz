@@ -36,28 +36,28 @@ export default function Hero() {
             <span className="h-0.5 w-8 bg-blue-500" />
           </div>
 
-          <h1 className=" text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-7xl font-semibold text-gray-700">
+          <h1 className=" text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-7xl font-semibold text-black">
             We Don’t Chase
             <br />
             Attention.
           </h1>
 
-          <div className="mx-auto lg:mx-0 mt-6 px-6 sm:px-8 py-3 sm:py-4 rounded-full border border-black text-black text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-nowrap font-semibold w-fit">
+          <div className="mx-auto lg:mx-0 mt-3 text-blue-500 text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-6xl font-semibold text-nowrap">
             We Activate Decisions.
           </div>
 
-          <p className="mt-8 max-w-xl mx-auto lg:mx-0 leading-relaxed text-sm sm:text-base">
-            <span className="text-black/80">
+          <p className="mt-8 max-w-xl mx-auto lg:mx-0 leading-relaxed text-base sm:text-lg">
+            <span className="text-black">
               The way people choose has changed.
             </span>
             <br />
-            <span className="text-black/50">
+            <span className="text-black">
               We identify where interest is forming, where confidence is
               building, and action is most likely to occur.
             </span>
           </p>
 
-          <p className="mt-6 text-black text-sm sm:text-base">
+          <p className="mt-6 text-black text-base sm:text-lg">
             This Is How Modern Growth Happens.
             <br />
             Quietly. Precisely. Powerfully.
@@ -77,13 +77,13 @@ export default function Hero() {
               src={HeroImage}
               alt="Hero banner"
               fill
-              className="lg:object-fill"
+              className="lg:object-fill opacity-10"
               priority
             />
           </div>
 
           {/* SOCIAL PROOF */}
-          <div className="absolute bottom-6 left-0 translate-x-0 flex items-center gap-4">
+          {/* <div className="absolute bottom-6 left-0 translate-x-0 flex items-center gap-4">
             <div className="flex -space-x-3">
               {avatars.map((avatar, i) => (
                 <div
@@ -101,7 +101,7 @@ export default function Hero() {
               </span>
               <span>User Active</span>
             </p>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

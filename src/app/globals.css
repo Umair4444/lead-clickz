@@ -123,3 +123,55 @@
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes eye-glow {
+  0% {
+    opacity: 0.2;
+    transform: scaleX(0.25);
+  }
+  40% {
+    opacity: 0.6;
+    transform: scaleX(0.45);
+  }
+  70% {
+    opacity: 0.4;
+    transform: scaleX(0.35);
+  }
+  100% {
+    opacity: 0.2;
+    transform: scaleX(0.25);
+  }
+}
+
+@keyframes eye-beam-smooth {
+  0% {
+    opacity: 0;
+    transform: scaleX(0.2);
+  }
+  35% {
+    opacity: 0.3;
+    transform: scaleX(0.4);
+  }
+  60% {
+    opacity: 0.8;
+    transform: scaleX(1);
+  }
+  85% {
+    opacity: 0.6;
+    transform: scaleX(1.05);
+  }
+  100% {
+    opacity: 0;
+    transform: scaleX(1.1);
+  }
+}
+
+.animate-eye-glow {
+  transform-origin: center;
+  animation: eye-glow 5s ease-in-out infinite;
+}
+
+.animate-eye-beam-smooth {
+  transform-origin: center;
+  animation: eye-beam-smooth 2s ease-in-out infinite;
+}

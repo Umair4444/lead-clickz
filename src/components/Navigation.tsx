@@ -1,49 +1,67 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import CTAButton from "@/components/ui/CTAButton";
 import thunder from "@/assets/thumder.png";
+import logo from "@/assets/logo.gif";
 import ArrowRightUp from "@/components/icons/ArrowRightUp";
 
+const navItems = [
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/services" },
+  { label: "Markets", href: "/markets" },
+  { label: "Insights", href: "/insights" },
+  { label: "Ecosystem", href: "/ecosystem" },
+  { label: "About", href: "/about" },
+];
+
 export default function Navigation() {
+  const pathname = usePathname();
   return (
     <nav className="fixed top-0 z-50 w-full bg-white/80 backdrop-blur-xl">
       <div className="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between ">
         {/* Logo */}
-        <Link
-          href="/"
-          className="flex items-center font-bold text-3xl select-none"
-        >
-          <span className="text-[#027BFF]">leads</span>
-          <span>cl</span>
+ <div>
+  <Link href="/" className="group inline-block">
+    <Image
+      src={logo}
+      alt="Logo"
+      priority
+      className="
+        h-10 w-fit object-contain
+        transition-all duration-300 ease-out
+        group-hover:scale-105
+        group-hover:opacity-90
+      "
+    />
+  </Link>
+</div>
 
-          <Image
-            src={thunder}
-            alt="Thunder icon"
-            className="mx-1 w-2 h-8"
-            priority
-          />
-
-          <span>ckz</span>
-        </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden lg:flex items-center gap-10">
-          {[
-            { label: "Home", href: "/" },
-            { label: "Services", href: "/services" },
-            { label: "Markets", href: "/markets" },
-            { label: "Insights", href: "/insights" },
-            { label: "Ecosystem", href: "/ecosystem" },
-            { label: "About", href: "/about" },
-          ].map((item) => (
-            <Link
-              key={item.label}
-              href={item.href}
-              className="text-lg font-medium text-[#615F63] hover:text-[#027BFF] transition-colors"
-            >
-              {item.label}
-            </Link>
-          ))}
+        <div className="hidden lg:flex items-center gap-6">
+          {navItems.map((item) => {
+            const isActive = pathname === item.href;
+
+            return (
+              <Link key={item.href} href={item.href} className="relative text-lg font-medium">
+                <span
+                  className={`relative ${
+                    isActive
+                      ? "text-[#027BFF]"
+                      : "text-[#615F63] hover:text-[#027BFF]"
+                  }`}
+                >
+                  {item.label}
+                  {isActive && (
+                    <span className="absolute left-1/4 -bottom-1 h-[2px] w-1/2 -translate-x-1/2 bg-[#027BFF]" />
+                  )}
+                </span>
+              </Link>
+            );
+          })}
         </div>
 
         {/* CTA */}

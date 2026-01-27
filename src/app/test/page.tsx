@@ -7,10 +7,10 @@ import TheSystem from "../component/TheSystem";
 const page = () => {
   return (
     <div>
-      <Hero />
-      <TheShift />
-      <SparkSignals />
-      <BrandEvolution />
+      {/* <Hero /> */}
+      {/* <TheShift /> */}
+      {/* <SparkSignals /> */}
+      {/* <BrandEvolution /> */}
       {/* <TheSystem /> */}
     </div>
   );
