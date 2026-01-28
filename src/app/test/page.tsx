@@ -19,7 +19,7 @@ const page = () => {
       {/* <HumanIntellect /> */}
       {/* <MarketFocus /> */}
       {/* <Outcomes /> */}
-      <Invitation />
+      {/* <Invitation /> */}
     </div>
   );
 };

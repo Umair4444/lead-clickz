@@ -11,15 +11,15 @@ import Invitation from "@/components/HomePage/Invitation";
 const page = () => {
   return (
     <div>
-      <Hero />
-      <TheShift />
-      <SparkSignals />
-      <TheSystem />
-      <BrandEvolution />
-      <HumanIntellect />
-      <MarketFocus />
-      <Outcomes />
-      <Invitation />
+      {/* <Hero /> */}
+      {/* <TheShift /> */}
+      {/* <SparkSignals /> */}
+      {/* <TheSystem /> */}
+      {/* <BrandEvolution /> */}
+      {/* <HumanIntellect /> */}
+      {/* <MarketFocus /> */}
+      {/* <Outcomes /> */}
+      {/* <Invitation /> */}
     </div>
   );
 };

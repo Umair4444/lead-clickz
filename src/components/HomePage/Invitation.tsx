@@ -61,9 +61,13 @@ export default function Invitation() {
                 </div>
 
                 {/* Button */}
-                <div className="relative w-full md:w-80 h-16">
+                <div className="relative w-full ">
                   {/* Main Button */}
-                  <CTAButton variant="primary" className="w-64 justify-center">
+                  <CTAButton
+                    variant="primary"
+                    className="w-56 py-2 justify-center"
+                    size="sm"
+                  >
                     Apply To Be Considered
                   </CTAButton>
                 </div>
