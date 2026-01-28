@@ -25,7 +25,7 @@ export default function CTAButton({
         size === "md" && "px-8 py-4 text-base",
         size === "lg" && "px-10 py-6 text-lg",
         variant === "primary" &&
-          "bg-blue-500 text-white border-4 border-[#cffcff] hover:shadow-[0_0_20px_rgba(60,130,246,0.8)]",
+          "bg-blue-500 text-white border-4 border-blue-500 hover:border-sky-200 hover:shadow-[0px_0px_14px_rgba(60,130,246,0.8)]",
         variant === "secondary" &&
           "border-2 border-blue-600 text-black hover:bg-blue-500 hover:text-white",
         className

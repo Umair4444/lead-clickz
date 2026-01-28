@@ -71,7 +71,7 @@ export default function Navigation() {
           <CTAButton
             size="sm"
             variant="primary"
-            className="text-[18px] justify-between"
+            className="text-[18px] justify-between "
           >
             Contact Us
             <span className="ml-2 flex h-8 w-8 translate-x-4 items-center justify-center rounded-full bg-white text-black">

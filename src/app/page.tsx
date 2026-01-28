@@ -1,11 +1,12 @@
 import Hero from "@/components/HomePage/Hero";
-import SparkSignals from "@/components/SparkSignals2";
+import SparkSignals from "@/components/HomePage/SparkSignals2";
 import TheShift from "@/components/HomePage/TheShift";
 import BrandEvolution from "@/components/HomePage/BrandEvolution";
 import TheSystem from "@/components/HomePage/TheSystem";
 import MarketFocus from "@/components/HomePage/MarketFocus";
 import Outcomes from "@/components/HomePage/Outcomes";
 import HumanIntellect from "@/components/HomePage/HumanIntellect";
+import Invitation from "@/components/HomePage/Invitation";
 
 const page = () => {
   return (
@@ -18,6 +19,7 @@ const page = () => {
       <HumanIntellect />
       <MarketFocus />
       <Outcomes />
+      <Invitation />
     </div>
   );
 };

@@ -64,9 +64,9 @@ export default function Hero() {
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
-            <CTAButton variant="primary">Our Approach</CTAButton>
+            <CTAButton variant="primary" className="w-52 justify-center">Our Approach</CTAButton>
 
-            <CTAButton variant="secondary">Apply To Be Considered</CTAButton>
+            <CTAButton variant="secondary" className="w-64 justify-center">Apply To Be Considered</CTAButton>
           </div>
         </div>
 
