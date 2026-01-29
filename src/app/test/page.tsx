@@ -1,5 +1,5 @@
 import Hero from "@/components/HomePage/Hero";
-import SparkSignals from "@/components/HomePage/SparkSignals2";
+import SparkSignals from "@/components/HomePage/SparkSignals";
 import TheShift from "@/components/HomePage/TheShift";
 import BrandEvolution from "@/components/HomePage/BrandEvolution";
 import TheSystem from "../../components/HomePage/TheSystem";
@@ -15,7 +15,7 @@ const page = () => {
       {/* <TheShift /> */}
       {/* <SparkSignals /> */}
       {/* <TheSystem /> */}
-      {/* <BrandEvolution /> */}
+      <BrandEvolution />
       {/* <HumanIntellect /> */}
       {/* <MarketFocus /> */}
       {/* <Outcomes /> */}

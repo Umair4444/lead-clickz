@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Backgrund from "@/assets/hero-banner.png";
 
 export default function SparkSignals() {
   const signals = [
@@ -37,8 +38,19 @@ export default function SparkSignals() {
   ];
 
   return (
-    <section className="w-full bg-white py-6 px-6 md:px-20">
-      <div className="max-w-7xl mx-auto flex flex-col gap-8">
+    <section className="relative w-full bg-white px-6 py-6 lg:py-10 overflow-hidden">
+      {/* BACKGROUND IMAGE TOP-RIGHT */}
+      <div
+        className="absolute -top-16 -right-60 w-[500px] h-[500px] md:w-[700px] md:h-[700px] bg-no-repeat bg-contain pointer-events-none"
+        style={{
+          backgroundImage: `url(${Backgrund.src})`,
+          opacity: 0.1,
+          zIndex: 0,
+        }}
+      />
+
+      {/* CONTENT */}
+      <div className="relative max-w-7xl mx-auto flex flex-col gap-8 z-10">
         {/* Header */}
         <motion.div
           className="max-w-2xl"
@@ -78,7 +90,7 @@ export default function SparkSignals() {
 
             {/* LINE */}
             <motion.div
-              className="w-10 h-0.5 bg-blue-500 origin-left"
+              className="w-10 sm:w-14 h-0.5 bg-[#027BFF] origin-left"
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}

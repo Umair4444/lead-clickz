@@ -68,42 +68,43 @@ export default function Hero() {
           transition={{ duration: 1 }}
         >
           {/* Subheading */}
-   <motion.div
-  className="flex items-center justify-center lg:justify-start gap-3 mb-6 cursor-default"
-  initial={{ opacity: 0, y: -10 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ delay: 0.3, duration: 0.5, ease: "easeOut" }}
-  whileHover="hover"
->
-  {/* TEXT */}
-  <motion.span
-    className="text-xs sm:text-sm uppercase tracking-widest text-gray-600 font-semibold"
-    variants={{
-      hover: {
-        y: -2,
-        color: "#111827",
-        transition: { type: "spring", stiffness: 300, damping: 20 },
-      },
-    }}
-  >
-    At Lead Clickz
-  </motion.span>
+          <motion.div
+            className="flex items-center justify-center lg:justify-start gap-3 mb-4 cursor-default"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.5, ease: "easeOut" }}
+            whileHover="hover"
+          >
+            {/* TEXT */}
+            <motion.span
+              className="text-sm sm:text-base lg:text-lg uppercase tracking-widest text-gray-600 font-semibold"
 
-  {/* LINE */}
-  <motion.span
-    className="h-0.5 w-8 bg-blue-500 origin-left"
-    initial={{ scaleX: 0 }}
-    animate={{ scaleX: 1 }}
-    transition={{ delay: 0.45, duration: 0.4, ease: "easeOut" }}
-    variants={{
-      hover: {
-        scaleX: 1.5,
-        boxShadow: "0px 0px 8px rgba(59,130,246,0.8)",
-        transition: { duration: 0.3 },
-      },
-    }}
-  />
-</motion.div>
+              variants={{
+                hover: {
+                  y: -2,
+                  color: "#111827",
+                  transition: { type: "spring", stiffness: 300, damping: 20 },
+                },
+              }}
+            >
+              At Lead Clickz
+            </motion.span>
+
+            {/* LINE */}
+            <motion.span
+              className="h-0.5 w-8 bg-blue-500 origin-left"
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ delay: 0.45, duration: 0.4, ease: "easeOut" }}
+              variants={{
+                hover: {
+                  scaleX: 1.5,
+                  boxShadow: "0px 0px 8px rgba(59,130,246,0.8)",
+                  transition: { duration: 0.3 },
+                },
+              }}
+            />
+          </motion.div>
 
           {/* Main Heading */}
           <motion.h1
@@ -180,7 +181,7 @@ export default function Hero() {
 
         {/* RIGHT SIDE */}
         <motion.div
-          className="relative w-full min-h-[88vh] flex justify-center items-center"
+          className="hidden relative w-full min-h-[88vh] lg:flex justify-center items-center"
           onMouseEnter={() => addDots(5)} // spawn dots on hover
         >
           {/* Hero Image */}
