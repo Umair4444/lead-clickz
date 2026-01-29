@@ -16,7 +16,7 @@ const page = () => {
       <SparkSignals />
       <TheSystem />
       <BrandEvolution />
-      {/* <HumanIntellect /> */}
+      <HumanIntellect />
       {/* <MarketFocus /> */}
       {/* <Outcomes /> */}
       {/* <Invitation /> */}

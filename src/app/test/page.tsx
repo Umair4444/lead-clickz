@@ -15,8 +15,8 @@ const page = () => {
       {/* <TheShift /> */}
       {/* <SparkSignals /> */}
       {/* <TheSystem /> */}
-      <BrandEvolution />
-      {/* <HumanIntellect /> */}
+      {/* <BrandEvolution /> */}
+      <HumanIntellect />
       {/* <MarketFocus /> */}
       {/* <Outcomes /> */}
       {/* <Invitation /> */}
