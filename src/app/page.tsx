@@ -12,7 +12,7 @@ const page = () => {
   return (
     <div>
       {/* <Hero /> */}
-      {/* <TheShift /> */}
+      <TheShift />
       {/* <SparkSignals /> */}
       {/* <TheSystem /> */}
       {/* <BrandEvolution /> */}
