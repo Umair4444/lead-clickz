@@ -32,7 +32,7 @@ const itemVariants: Variants = {
 const HumanIntellect = () => {
   return (
     <motion.section
-      className="relative group h-[100svh] overflow-hidden pt-12"
+      className="relative group h-screen overflow-hidden pt-20"
       initial="rest"
       animate="rest"
       whileHover="hover"

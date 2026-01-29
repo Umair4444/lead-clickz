@@ -13,13 +13,17 @@ type Dot = {
   dx: number;
   dy: number;
   color: string;
+  createdAt: number;
 };
 
 export default function Hero() {
   const [dots, setDots] = useState<Dot[]>([]);
   const colors = ["#FF3C38", "#FFD93D", "#6BCB77", "#4D96FF", "#FF6AC1"];
 
-  const addDots = (count = 5) => {
+  // Dot creation
+  const addDots = (count = 2) => {
+    const now = Date.now();
+
     const newDots: Dot[] = Array.from({ length: count }, () => ({
       id: Math.random(),
       x: Math.random() * window.innerWidth * 0.8,
@@ -27,32 +31,38 @@ export default function Hero() {
       dx: (Math.random() - 0.5) * 2,
       dy: (Math.random() - 0.5) * 2,
       color: colors[Math.floor(Math.random() * colors.length)],
+      createdAt: now,
     }));
+
     setDots((prev) => [...prev, ...newDots]);
   };
 
-  // Automatically add dots every 2 seconds
+  // Automatically add dots every 10 seconds
   useEffect(() => {
-    const interval = setInterval(() => addDots(5), 2000);
+    const interval = setInterval(() => addDots(5), 10000);
     return () => clearInterval(interval);
   }, []);
 
-  // Update dot positions continuously
+  // Automatically remove dots every 15 seconds
   useEffect(() => {
     const interval = setInterval(() => {
+      const now = Date.now();
+
       setDots((prev) =>
-        prev.map((dot) => {
-          let newX = dot.x + dot.dx;
-          let newY = dot.y + dot.dy;
+        prev
+          .filter((dot) => now - dot.createdAt < 15000)
+          .map((dot) => {
+            let newX = dot.x + dot.dx;
+            let newY = dot.y + dot.dy;
 
-          // bounce inside the viewport
-          if (newX < 0 || newX > window.innerWidth * 0.9) dot.dx *= -1;
-          if (newY < 0 || newY > window.innerHeight * 0.9) dot.dy *= -1;
+            if (newX < 0 || newX > window.innerWidth * 0.9) dot.dx *= -1;
+            if (newY < 0 || newY > window.innerHeight * 0.9) dot.dy *= -1;
 
-          return { ...dot, x: newX, y: newY };
-        }),
+            return { ...dot, x: newX, y: newY };
+          }),
       );
     }, 20);
+
     return () => clearInterval(interval);
   }, []);
 
@@ -78,7 +88,6 @@ export default function Hero() {
             {/* TEXT */}
             <motion.span
               className="text-sm sm:text-base lg:text-lg uppercase tracking-widest text-gray-600 font-semibold"
-
               variants={{
                 hover: {
                   y: -2,
