@@ -1,34 +1,46 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import CTAButton from "@/components/ui/CTAButton";
 
+// Framer Motion variants
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3,
+      duration: 0.6,
+    },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut" as const,
+    },
+  },
+};
+
+const highlightVariants: Variants = {
+  hidden: { scaleX: 0 },
+  visible: {
+    scaleX: 1,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut" as const,
+    },
+  },
+};
+
 export default function TheShift() {
-  // Framer Motion variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.3, duration: 0.6 },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  };
-
-  const highlightVariants = {
-    hidden: { scaleX: 0 },
-    visible: { scaleX: 1, transition: { duration: 0.8, ease: "easeOut" } },
-  };
-
   return (
-    <section className="relative w-full lg:pt-10 bg-[#F9FBFE]">
+    <section className="relative w-full lg:py-10  bg-[#F9FBFE]">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         {/* Main content grid */}
         <motion.div
@@ -40,16 +52,50 @@ export default function TheShift() {
         >
           {/* LEFT COLUMN */}
           <motion.div className="space-y-5" variants={itemVariants}>
-            <motion.div
-              className="flex items-center gap-5"
-              variants={itemVariants}
-            >
-              <h3 className="text-xl font-semibold">THE SHIFT</h3>
-              <motion.div
-                className="w-10 sm:w-14 h-0.5 bg-[#027BFF]"
-                variants={highlightVariants}
-              />
-            </motion.div>
+        <motion.div
+  className="flex items-center gap-5 cursor-default"
+  variants={itemVariants}
+  initial="hidden"
+  animate="visible"
+  whileHover="hover"
+>
+  {/* TEXT */}
+  <motion.h3
+    className="text-lg font-semibold tracking-wide"
+    variants={{
+      hidden: { opacity: 0, y: 10 },
+      visible: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.4, ease: "easeOut" as const },
+      },
+      hover: {
+        y: -2,
+        transition: { type: "spring", stiffness: 300, damping: 18 },
+      },
+    }}
+  >
+    THE SHIFT
+  </motion.h3>
+
+  {/* LINE */}
+  <motion.div
+    className="w-10 sm:w-14 h-0.5 bg-[#027BFF] origin-left"
+    variants={{
+      hidden: { scaleX: 0 },
+      visible: {
+        scaleX: 1,
+        transition: { duration: 0.6, ease: "easeOut" as const },
+      },
+      hover: {
+        scaleX: 1.25,
+        boxShadow: "0px 0px 10px rgba(2, 123, 255, 0.8)",
+        transition: { duration: 0.3 },
+      },
+    }}
+  />
+</motion.div>
+
 
             <motion.div className="lg:space-y-3" variants={itemVariants}>
               <motion.h1
@@ -115,28 +161,20 @@ export default function TheShift() {
                 variant="primary"
                 size="sm"
                 className="sm:px-10 justify-center"
-                asChild
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
               >
-                <motion.button
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Request Consideration
-                </motion.button>
+                Request Consideration
               </CTAButton>
 
               <CTAButton
                 variant="secondary"
                 size="sm"
                 className="sm:px-10 justify-center"
-                asChild
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
               >
-                <motion.button
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  How We Think
-                </motion.button>
+                How We Think
               </CTAButton>
             </motion.div>
           </motion.div>
