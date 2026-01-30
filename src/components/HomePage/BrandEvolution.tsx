@@ -61,7 +61,7 @@ export default function BrandEvolution() {
               whileHover="hover"
             >
               <motion.h3
-                className="text-lg font-semibold tracking-wide"
+              className="text-base uppercase tracking-wide font-semibold"
                 variants={{
                   hidden: { opacity: 0, y: 5 },
                   visible: {

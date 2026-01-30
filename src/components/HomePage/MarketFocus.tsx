@@ -77,11 +77,11 @@ export default function MarketFocus() {
           >
             {/* Label */}
             <motion.div
-              className="flex items-center gap-4 -mb-2 cursor-default flex-wrap"
+              className="flex items-center gap-4 -mb-2 cursor-default  flex-wrap"
               whileHover="hover"
             >
               <motion.h3
-                className="text-sm sm:text-base font-semibold text-light-gray tracking-wide"
+              className="text-base uppercase tracking-wide font-semibold"
                 variants={{
                   hidden: { opacity: 0, y: 5 },
                   visible: {

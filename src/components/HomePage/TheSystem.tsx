@@ -41,14 +41,14 @@ export default function TheSystem() {
           {/* LEFT COLUMN */}
           <motion.div className="space-y-5" variants={itemVariants}>
             <motion.div
-              className="flex items-center gap-4 mb-4 cursor-default"
+              className="flex items-center gap-4 mb-2 cursor-default"
               variants={itemVariants}
               initial="hidden"
               animate="visible"
               whileHover="hover"
             >
               <motion.h3
-                className="text-lg uppercase tracking-wide font-semibold"
+              className="text-base uppercase tracking-wide font-semibold"
                 variants={{
                   hidden: { opacity: 0, y: 10 },
                   visible: {

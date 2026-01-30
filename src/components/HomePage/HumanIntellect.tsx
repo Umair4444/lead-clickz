@@ -122,7 +122,7 @@ const HumanIntellect = () => {
               whileHover="hover"
             >
               <motion.h3
-                className="text-sm sm:text-base font-semibold text-light-gray tracking-wide"
+              className="text-base uppercase tracking-wide font-semibold"
                 variants={{
                   hidden: { opacity: 0, y: 5 },
                   visible: {

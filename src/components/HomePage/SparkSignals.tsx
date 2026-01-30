@@ -62,7 +62,7 @@ export default function SparkSignals() {
         >
           {/* Subheading */}
           <motion.div
-            className="flex items-center gap-4 mb-4 cursor-default"
+            className="flex items-center gap-4 mb-2 cursor-default"
             initial="hidden"
             animate="visible"
             whileHover="hover"
@@ -77,7 +77,7 @@ export default function SparkSignals() {
           >
             {/* TEXT */}
             <motion.h3
-              className="text-lg uppercase tracking-wide font-semibold"
+              className="text-base uppercase tracking-wide font-semibold"
               variants={{
                 hover: {
                   x: 2,

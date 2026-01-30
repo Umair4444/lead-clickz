@@ -47,7 +47,7 @@ export default function TheShift() {
           <motion.div className="space-y-5" variants={itemVariants}>
             {/* Subheading */}
             <motion.div
-              className="flex items-center justify-start gap-3 mb-4 cursor-default"
+              className="flex items-center justify-start gap-3 mb-2 cursor-default"
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.5, ease: "easeOut" }}
@@ -55,7 +55,7 @@ export default function TheShift() {
             >
               {/* TEXT */}
               <motion.h3
-                className="text-lg font-semibold tracking-wide"
+              className="text-base uppercase tracking-wide font-semibold"
                 variants={{
                   hover: {
                     y: -2,

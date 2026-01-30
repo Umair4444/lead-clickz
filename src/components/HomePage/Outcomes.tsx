@@ -65,7 +65,7 @@ export default function Outcomes() {
               whileHover="hover"
             >
               <motion.span
-                className="text-base sm:text-lg font-semibold tracking-wide"
+              className="text-base uppercase tracking-wide font-semibold"
                 style={{ color: "#615F63" }}
                 variants={{
                   hidden: { opacity: 0, y: 5 },
