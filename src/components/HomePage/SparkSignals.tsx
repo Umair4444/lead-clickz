@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Backgrund from "@/assets/hero-banner.png";
+import Backgrund from "@/assets/spark-signal-background.jpg";
 import AnimatedConnector from "@/components/Framer-motion/AnimatedConnector";
 
 export default function SparkSignals() {
@@ -42,10 +42,10 @@ export default function SparkSignals() {
     <section className="relative w-full bg-white px-6 py-6 lg:py-10 overflow-hidden">
       {/* BACKGROUND IMAGE TOP-RIGHT */}
       <div
-        className="absolute -top-16 -right-60 w-[500px] h-[500px] md:w-[700px] md:h-[700px] bg-no-repeat bg-contain pointer-events-none"
+        className="absolute -top-40 -right-26 scale-x-[-1] w-[500px] h-[500px] md:w-[700px] md:h-[700px] bg-no-repeat bg-cover pointer-events-none"
         style={{
           backgroundImage: `url(${Backgrund.src})`,
-          opacity: 0.1,
+          opacity: 0.2,
           zIndex: 0,
         }}
       />

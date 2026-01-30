@@ -17,9 +17,9 @@ const page = () => {
       <TheSystem />
       <BrandEvolution />
       <HumanIntellect />
-      {/* <MarketFocus /> */}
-      {/* <Outcomes /> */}
-      {/* <Invitation /> */}
+      <MarketFocus />
+      <Outcomes />
+      <Invitation />
     </div>
   );
 };

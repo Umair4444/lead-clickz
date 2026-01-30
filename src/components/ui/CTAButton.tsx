@@ -22,7 +22,7 @@ export default function CTAButton({
     <motion.button
       {...props}
       className={clsx(
-        "rounded-full font-medium transition-all duration-300 inline-flex items-center",
+        "rounded-full font-medium transition-all duration-300 inline-flex items-center cursor-pointer",
         size === "sm" && "px-6 py-3 text-sm",
         size === "md" && "px-8 py-4 text-base",
         size === "lg" && "px-10 py-6 text-lg",

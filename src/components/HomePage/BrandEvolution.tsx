@@ -26,7 +26,7 @@ const itemVariants: Variants = {
 
 export default function BrandEvolution() {
   return (
-    <section className="relative w-full overflow-hidden bg-white py-6 lg:py-10">
+    <section className="relative w-full overflow-hidden bg-[#f8f9f8] py-6 lg:py-10">
       {/* Background decorative elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-24 left-1/2 -translate-x-1/2 w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] lg:w-[500px] lg:h-[500px]">

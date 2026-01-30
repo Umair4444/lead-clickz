@@ -23,11 +23,11 @@ const itemVariants: Variants = {
 
 export default function TheSystem() {
   return (
-    <section className="relative w-full py-6 lg:py-10 bg-[#F9FBFE]">
+    <section className="relative w-full py-6 lg:py-10 bg-[#fcfdff]">
       {/* BACKGROUND IMAGE */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${Background.src})`, opacity: 0.2 }}
+        style={{ backgroundImage: `url(${Background.src})`, opacity: 0.1 }}
       />
       <div className="max-w-7xl mx-auto px-5 sm:px-8 relative z-10">
         {/* Main content grid */}

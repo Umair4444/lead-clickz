@@ -211,7 +211,7 @@ export default function Hero() {
               src={HeroImage}
               alt="Hero banner"
               fill
-              className="object-contain opacity-80 hover:opacity-100"
+              className="object-contain opacity-20 hover:opacity-80"
               priority
             />
           </motion.div>
