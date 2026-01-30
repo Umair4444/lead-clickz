@@ -1,13 +1,23 @@
 "use client";
 
 import Image from "next/image";
-import { FaTwitter, FaFacebookF, FaInstagram } from "react-icons/fa";
-import { SiTiktok } from "react-icons/si"; // TikTok
-import { FaXTwitter } from "react-icons/fa6"; // optional if you install FontAwesome6
-import Logo from "@/assets/logo.gif";
 import CTAButton from "../ui/CTAButton";
+import { MotionButton, hoverLift } from "../ui/motion-button";
 import Background from "@/assets/footer-background.png";
+import { FaTwitter, FaFacebookF, FaInstagram } from "react-icons/fa";
+import { SiTiktok } from "react-icons/si";
+import { FaXTwitter } from "react-icons/fa6";
+import Logo from "@/assets/logo.gif";
 import ThunderIcon from "@/assets/thunder-logo.svg";
+import { motion } from "framer-motion";
+
+const socialIcons = [
+  { icon: FaTwitter },
+  { icon: FaFacebookF },
+  { icon: FaInstagram },
+  { icon: SiTiktok },
+  { icon: FaXTwitter },
+];
 
 export default function Footer() {
   return (
@@ -21,32 +31,102 @@ export default function Footer() {
         />{" "}
       </div>
 
-      <div className="absolute inset-0 top-0 left-0">
-        {/* Social Icons */}
-        <div className="flex flex-col gap-4 text-gray-600 bg-white text-xl w-14 py-8 px-3 rounded-r-full">
-          <FaTwitter />
-          <FaFacebookF />
-          <FaInstagram />
-          <SiTiktok />
-          <FaXTwitter />
-        </div>
-      </div>
+      <motion.div
+        className="absolute inset-0 top-0 left-0 flex flex-col"
+        initial={{ opacity: 0.9 }}
+        whileHover={{ opacity: 1 }}
+      >
+        {/* Social Icons Container with Glow */}
+        <motion.div
+          className="flex flex-col bg-white/80 backdrop-blur w-14 py-6 px-2 rounded-r-full shadow-xl relative"
+          initial={{ boxShadow: "0 0 15px rgba(59,130,246,0.3)" }}
+          whileHover={{
+            boxShadow:
+              "0 0 25px rgba(59,130,246,0.6), 0 0 40px rgba(59,130,246,0.4)",
+          }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
+        >
+          {socialIcons.map(({ icon: Icon }, i) => (
+            <MotionButton
+              key={i}
+              variant="ghost"
+              size="icon"
+              {...hoverLift}
+              whileHover={{
+                rotate: 6,
+                boxShadow: "0 0 20px rgba(59,130,246,0.6)",
+              }}
+              className="text-gray-700 hover:text-blue-600"
+            >
+              <Icon />
+            </MotionButton>
+          ))}
 
-      <div className="absolute top-0 right-0 bg-white rounded-bl-[30px]">
-        {/* Back to top Button */}
-        <div className="flex flex-row items-center justify-between text-gray-600 px-6 ">
-          <button className="flex flex-row items-center gap-4">
-            <h1 className="text-black font-semibold text-lg">
-              Back to the top
-            </h1>
-            <div className="w-8 rotate-[24deg]">
-              <Image src={ThunderIcon} alt="footer Logo" className=" w-full" />
-            </div>
-          </button>
-        </div>
-      </div>
+          {/* Optional: subtle ambient glow layer */}
+          <motion.div
+            className="absolute inset-0 rounded-r-full pointer-events-none"
+            style={{
+              background:
+                "radial-gradient(circle at 50% 50%, rgba(59,130,246,0.25), transparent 70%)",
+              filter: "blur(20px)",
+            }}
+            initial={{ opacity: 0.6 }}
+            whileHover={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          />
+        </motion.div>
+      </motion.div>
 
-      <div className="relative z-10 container mx-auto px-6 flex flex-col gap-16">
+      {/* Go To Top Button */}
+      <MotionButton
+        variant="ghost"
+        {...hoverLift}
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        className="
+    absolute flex items-center gap-3 right-0 top-0
+    px-4 py-6
+    rounded-bl-[30px]
+    bg-white/70 backdrop-blur-xl
+    border border-white/40
+    text-gray-800
+    group
+    overflow-visible
+  "
+        initial={{ y: -20 }}
+        animate={{ y: 0 }}
+        // whileHover={{ y: 2, boxShadow: "0 0 20px rgba(59,130,246,0.6)" }}
+        whileHover={{ y: 2, boxShadow: "0 0 40px rgba(59,130,246,0.6)" }}
+        whileTap={{ scale: 0.96 }}
+        transition={{ type: "spring", stiffness: 260, damping: 18 }}
+      >
+        {/* Text */}
+        <span className="relative z-10 text-lg transition-colors group-hover:text-blue-600">
+          Back to the top
+        </span>
+
+        {/* Thunder Icon with proper glowing loop */}
+        <motion.div
+          className="w-7 relative z-10 group-hover:-rotate-45 duration-1000"
+          initial={{ rotate: 30 }}
+          whileHover={{ rotate: -24, y: -2 }}
+          animate={{
+            filter: [
+              "drop-shadow(0 0 0px #3b82f6)",
+              "drop-shadow(0 0 12px #3b82f6)",
+              "drop-shadow(0 0 0px #3b82f6)",
+            ],
+            rotate: [30, 15, 30],
+          }}
+          transition={{
+            rotate: { repeat: Infinity, duration: 2, ease: "easeInOut" },
+            filter: { repeat: Infinity, duration: 2, ease: "easeInOut" },
+          }}
+        >
+          <Image src={ThunderIcon} alt="Thunder Logo" />
+        </motion.div>
+      </MotionButton>
+
+      <div className="relative z-10 container mx-auto px-2 flex flex-col gap-16">
         {/* Top Section: Brand + Links + CTA */}
         <div className="flex flex-col xl:flex-row justify-between gap-16">
           {/* Brand + Description */}
@@ -61,7 +141,7 @@ export default function Footer() {
           </div>
 
           {/* Links */}
-          <div className="flex flex-wrap gap-12">
+          <div className="flex flex-wrap gap-20">
             {/* About Section */}
             <div className="flex flex-col gap-2">
               <h2 className="text-gray-500 font-semibold">Info</h2>
