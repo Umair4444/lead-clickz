@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { motion, Variants } from "framer-motion";
 import Background from "@/assets/system-background.png";
 
@@ -22,13 +23,34 @@ const itemVariants: Variants = {
 };
 
 export default function TheSystem() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 0.5; // 👈 slower (0.5–0.7 is sweet spot)
+    }
+  }, []);
   return (
     <section className="relative w-full py-6 lg:py-10 bg-[#fcfdff]">
       {/* BACKGROUND IMAGE */}
-      <div
+      {/* <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${Background.src})`, opacity: 0.1 }}
-      />
+      /> */}
+
+      <video
+        ref={videoRef}
+        className="absolute inset-0 w-full h-full object-cover"
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
+        style={{ opacity: 0.25 }}
+      >
+        <source src="/the-system.mp4" type="video/mp4" />
+      </video>
+
       <div className="max-w-7xl mx-auto px-5 sm:px-8 relative z-10">
         {/* Main content grid */}
         <motion.div
@@ -48,7 +70,7 @@ export default function TheSystem() {
               whileHover="hover"
             >
               <motion.h3
-              className="text-base uppercase tracking-wide font-semibold"
+                className="text-base uppercase tracking-wide font-semibold"
                 variants={{
                   hidden: { opacity: 0, y: 10 },
                   visible: {

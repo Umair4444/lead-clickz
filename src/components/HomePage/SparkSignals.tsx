@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Backgrund from "@/assets/spark-signal-background.jpg";
 import AnimatedConnector from "@/components/Framer-motion/AnimatedConnector";
+import { useEffect, useRef } from "react";
 
 export default function SparkSignals() {
   const signals = [
@@ -38,17 +39,39 @@ export default function SparkSignals() {
     },
   ];
 
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 0.5; // 👈 slower (0.5–0.7 is sweet spot)
+    }
+  }, []);
+
   return (
     <section className="relative w-full bg-white px-6 py-6 lg:py-10 overflow-hidden">
       {/* BACKGROUND IMAGE TOP-RIGHT */}
-      <div
+      {/* <div
         className="absolute -top-40 -right-26 scale-x-[-1] w-[500px] h-[500px] md:w-[700px] md:h-[700px] bg-no-repeat bg-cover pointer-events-none"
         style={{
           backgroundImage: `url(${Backgrund.src})`,
           opacity: 0.2,
           zIndex: 0,
         }}
-      />
+      /> */}
+
+      <video
+        ref={videoRef}
+        className="absolute right-0 inset-0 w-full h-full object-cover"
+        // className="absolute -top-40 -right-26 scale-x-[-1] w-[500px] h-[500px] md:w-[700px] md:h-[700px] bg-no-repeat bg-cover pointer-events-none"
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
+        style={{ opacity: 0.25 }}
+      >
+        <source src="/spark-signals-2.mp4" type="video/mp4" />
+      </video>
 
       {/* CONTENT */}
       <div className="relative max-w-7xl mx-auto flex flex-col gap-8 z-10">
