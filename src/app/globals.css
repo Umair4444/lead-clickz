@@ -175,3 +175,36 @@
   transform-origin: center;
   animation: eye-beam-smooth 2s ease-in-out infinite;
 }
+
+/* Hide scrollbar for custom scroll containers */
+.no-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE / Edge */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome / Safari */
+}
+
+/* Neon Scrollbar */
+.neon-scrollbar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.neon-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.neon-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    #00f5ff,
+    #7c00ff
+  ); /* gradient with 2 colors */
+  border-radius: 999px;
+  box-shadow: 0 0 6px #00f5ff; /* remove trailing comma */
+}
+
+.neon-scrollbar::-webkit-scrollbar-thumb:hover {
+  box-shadow: 0 0 10px #00f5ff; /* remove trailing comma */
+}

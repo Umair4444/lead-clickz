@@ -7,6 +7,7 @@ import MarketFocus from "@/components/HomePage/MarketFocus";
 import Outcomes from "@/components/HomePage/Outcomes";
 import HumanIntellect from "@/components/HomePage/HumanIntellect";
 import Invitation from "@/components/HomePage/Invitation";
+import ScrollSection from "@/components/Framer-motion/ScrollSection";
 
 const page = () => {
   return (
@@ -21,6 +22,18 @@ const page = () => {
       <Outcomes />
       <Invitation />
     </div>
+
+    // {/* <div className="">
+    //   <ScrollSection><Hero /></ScrollSection>
+    //   <ScrollSection><TheShift /></ScrollSection>
+    //   <ScrollSection><SparkSignals /></ScrollSection>
+    //   <ScrollSection><TheSystem /></ScrollSection>
+    //   <ScrollSection><BrandEvolution /></ScrollSection>
+    //   <ScrollSection><HumanIntellect /></ScrollSection>
+    //   <ScrollSection><MarketFocus /></ScrollSection>
+    //   <ScrollSection><Outcomes /></ScrollSection>
+    //   <ScrollSection><Invitation /></ScrollSection>
+    // </div> */}
   );
 };
 

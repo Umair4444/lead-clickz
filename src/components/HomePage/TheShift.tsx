@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { motion, Variants } from "framer-motion";
 import CTAButton from "@/components/ui/CTAButton";
 import Background from "@/assets/shift-background.jpg";
@@ -26,13 +27,33 @@ const itemVariants: Variants = {
 };
 
 export default function TheShift() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 0.5; // 👈 slower (0.5–0.7 is sweet spot)
+    }
+  }, []);
   return (
     <section className="relative w-full py-6 lg:py-10">
       {/* BACKGROUND IMAGE */}
-      <div
+      {/* <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${Background.src})`, opacity: 0.15 }}
-      />
+      /> */}
+
+      <video
+        ref={videoRef}
+        className="absolute inset-0 w-full h-full object-cover"
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
+        style={{ opacity: 0.25 }}
+      >
+        <source src="/shift-background.mp4" type="video/mp4" />
+      </video>
 
       <div className="relative max-w-7xl mx-auto px-5 sm:px-8">
         {/* MAIN GRID */}
