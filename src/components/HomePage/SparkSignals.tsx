@@ -69,6 +69,10 @@ export default function SparkSignals() {
         playsInline
         preload="auto"
         style={{ opacity: 0.25 }}
+        controls={false}
+        controlsList="nodownload nofullscreen noremoteplayback"
+        disablePictureInPicture
+        onContextMenu={(e) => e.preventDefault()}
       >
         <source src="/spark-signals-2.mp4" type="video/mp4" />
       </video>

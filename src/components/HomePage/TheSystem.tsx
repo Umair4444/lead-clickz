@@ -46,6 +46,10 @@ export default function TheSystem() {
         muted
         playsInline
         preload="auto"
+        controls={false}
+        controlsList="nodownload nofullscreen noremoteplayback"
+        disablePictureInPicture
+        onContextMenu={(e) => e.preventDefault()}
         style={{ opacity: 0.25 }}
       >
         <source src="/the-system.mp4" type="video/mp4" />

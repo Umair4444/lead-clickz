@@ -50,6 +50,10 @@ export default function TheShift() {
         muted
         playsInline
         preload="auto"
+        controls={false}
+        controlsList="nodownload nofullscreen noremoteplayback"
+        disablePictureInPicture
+        onContextMenu={(e) => e.preventDefault()}
         style={{ opacity: 0.25 }}
       >
         <source src="/shift-background.mp4" type="video/mp4" />
@@ -76,7 +80,7 @@ export default function TheShift() {
             >
               {/* TEXT */}
               <motion.h3
-              className="text-base uppercase tracking-wide font-semibold"
+                className="text-base uppercase tracking-wide font-semibold"
                 variants={{
                   hover: {
                     y: -2,
